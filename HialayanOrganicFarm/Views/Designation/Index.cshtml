@@ -1,0 +1,52 @@
+﻿
+@model IEnumerable<HimalayanOrganicFarm.Models.Designation>;
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <title></title>
+</head>
+
+<body>
+    <style>
+        .tex {
+            font-family: cursive;
+        }
+        .downpart {
+            background-color: #383838;
+            border: none;
+        }
+    </style>
+    <form asp-action="index" method="GET">
+        <div class="row input-group mt-3 mb-2">
+            <h2 class="ml-4 tex text-success">Listing of All Department</h2>
+        </div>
+    </form>
+    <table class="table table-hover">
+        <thead class="table table-success table-bordered  font-weight-bolder">
+            <tr>
+                <th>Id</th>
+                <th>Designation Title</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="table-bordered">
+            @foreach (var deg in Model)
+            {
+                <tr class="tblrow">
+                    <td>@deg.Id</td>
+                    <td>@deg.Title</td>
+                    <td>@deg.description</td>
+                    <td>
+                        <a class="btn btn-info">Update</a>
+                        <a class="btn btn-warning"asp-controller="Designation" asp-action="Detail" asp-route-id="@deg.Id">View</a>
+                        <a class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

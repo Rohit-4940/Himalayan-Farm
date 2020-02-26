@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<HimalayanOrganicFarm.Models.Department>;
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <title></title>
+</head>
+
+<body>
+    <style>
+        .tex {
+            font-family: cursive;
+        }
+        .downpart {
+            background-color: #383838;
+            border: none;
+        }
+    </style>
+    <form asp-action="index" method="GET">
+        <div class="row input-group mt-3 mb-2">
+            <h2 class="ml-4 tex text-success">Listing of All Department</h2>
+        </div>
+    </form>
+    <table class="table table-hover">
+        <thead class="table table-success table-bordered  font-weight-bolder">
+            <tr>
+                <th>Id</th>
+                <th>Department Title</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="table-bordered">
+            @foreach (var tem in Model)
+            {
+            <tr class="tblrow">
+                <td>@tem.Id</td>
+                <td>@tem.Title</td>
+                <td>@tem.Description</td>
+                <td>
+                <a class="btn btn-info">Update</a>
+                <a asp-controller="Department" asp-action="Detail" asp-route-id="@tem.Id" class="btn btn-warning">View</a>
+                <a asp-controller="Department" asp-action="index" asp-route-id="@tem.Id" class="btn btn-danger">Delete</a>
+                </td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

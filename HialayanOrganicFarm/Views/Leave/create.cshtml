@@ -1,0 +1,96 @@
+﻿@model Leave;
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <title></title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: #FBFCFC;
+        }
+
+        .container {
+            background-color: white;
+            height: 620px;
+            width: 1100px;
+            margin-top: 57px;
+        }
+
+        .text-center {
+            font-family: cursive;
+        }
+
+        .downpart {
+            background-color: #383838;
+            border: none;
+        }
+        .line{
+            border: solid #6cbe03 1px;
+        }
+    </style>
+    <form asp-controller="Leave" asp-action="create" method="Post" class="mt-3">
+        <hr class="line" />
+        <div class="container">
+            <div class="text"></div>
+            <h2 class="text-center text-success" style="margin-top:30px">Create Leave Form</h2>
+            <div class="form-group">
+                @*<div class="input-group" style="margin-top:35px">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="id" type="text" class="form-control" name="id" placeholder="Enter Your id(Not Nessary)">
+        </div>*@
+               
+                <div>
+                    <select asp-for="employee.Name" class="custom-select" name="employee" style="cursor:pointer;">
+                        <option value="employee.Name">Please select the Name of Employee from the List</option>
+                    </select>
+                </div>
+                    <span asp-validation-for="employee.Name" class="text-danger"></span>
+               
+               
+                    <div class="input-group" style="margin-top:25px">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="leave_type" type="text" class="form-control" name="leave_type" placeholder="Type of Leave"><br />
+                    </div>
+                <span asp-validation-for="leave_type" class="text-danger"></span>
+                
+                
+                <div class="input-group" style="margin-top:25px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" class="form-control" name="from_date" placeholder="From Date">
+                </div>
+                <span asp-validation-for="from_date" class="text-danger"></span>
+                
+                
+                <div class="input-group" style="margin-top:25px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" class="form-control" name="to_date" placeholder="To Date">
+                </div>
+                <span asp-validation-for="to_date" class="text-danger"></span>
+                
+               
+                <div class="input-group" style="margin-top:25px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" class="form-control" name="no_days" placeholder="No of Days">
+                </div>
+                <span asp-validation-for="no_days" class="text-danger"></span>
+                
+               
+                <div class="input-group" style="margin-top:25px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" class="form-control" name="description" placeholder="Description">
+                </div>
+                <span asp-validation-for="description" class="text-danger"></span>
+                
+
+                <div class="input-group" style="margin-top:45px">
+                    <button class="btn btn-success">Create</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

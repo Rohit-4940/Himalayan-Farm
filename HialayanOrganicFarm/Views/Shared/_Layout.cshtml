@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px:
+            }
+
+            section {
+                position: absolute;
+                height: 50px;
+                width: 100%;
+                background-color: black;
+                display: flex;
+            }
+
+            .content {
+                width: 50%;
+                height: 50px;
+                background-color: #6cbe03;
+                box-sizing: border-box;
+                padding: 15px 120px;
+                color: white;
+                float: left;
+            }
+
+            .header {
+                width: 50%;
+                height: 50px;
+                background-color: white;
+                box-sizing: border-box;
+                border-left: 50px solid #6cbe03;
+                border-bottom: 50px solid transparent;
+                float: right;
+            }
+
+            .login-button {
+                color: black;
+                float: right;
+                margin-right: 20px;
+                padding: 13px 0px;
+                font-weight: bold;
+                cursor:pointer;
+                text-decoration:none;
+            }
+            .login-button:hover{
+                text-decoration-line:none;
+            }
+
+            .logo-section {
+                height: 150px;
+                width: 100%;
+                background-color: #f3f3f5;
+            }
+
+            .logo {
+                height: 120px;
+                width: 20%;
+                margin-top: 45px;
+                padding: 10px 10px;
+                margin-left: 95px;
+                cursor: pointer;
+            }
+
+            .nav-item {
+                cursor: pointer;
+                margin-right: 10px;
+                padding-right:20px;
+            }
+            .log{
+                margin-right:80px;
+            }
+            .footer{
+                height:450px;
+                width:100%;
+                background-color:#383838;
+                position:absolute;
+            }
+            .footer-container{
+                height:380px;
+                width:85%;
+                background-color:#383838;
+                margin:0 auto;
+                position:relative;
+                margin-top:50px;
+               
+            }
+            .downpart{
+                background-color:#383838;
+                border:none;
+            }
+        </style>
+        <section>
+            <div class="content">
+                <h6>Welcome To Himalayan Organic Farm</h6>
+            </div>
+            <div class="header">
+                <a class="login-button log" asp-controller="Home" asp-action="login">Login</a>
+                <a class="login-button" asp-controller="Home" asp-action="dashboard">Logout</a>
+                <a><img src="~/image/icon1 (1).png" class="login-button" /></a>
+                <a><img src="~/image/icon2 (2).png" class="login-button" /></a>
+                <a><img src="~/image/icon3 (3).png" class="login-button" /></a>
+            </div>
+        </section>
+        <div class="logo-section">
+           <a asp-controller="Home" asp-action="dashboard"> <img src="~/image/logo1.png" class="logo" /></a>
+        </div>
+        <nav class="navbar navbar-expand-sm  bg-white ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto font-weight-bolder ">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark " asp-controller="Home" asp-action="dashboard">Home </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">Employee</a>
+                        <div class="dropdown-menu">
+                            <a asp-controller="Employee" asp-action="create" class="dropdown-item">Add New Employee</a>
+                            <a asp-controller="Employee" asp-action="Index" class="dropdown-item">List of Employee</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">Department</a>
+                        <div class="dropdown-menu">
+                            <a asp-controller="Department" asp-action="create" class="dropdown-item">Add New department</a>
+                            <a asp-controller="Department" asp-action="index" class="dropdown-item">List of Department</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">Designation</a>
+                        <div class="dropdown-menu">
+                            <a asp-controller="Designation" asp-action="create" class="dropdown-item">Add New Designation</a>
+                            <a asp-controller="Designation"asp-action="Index" class="dropdown-item">List of Designation</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">Leave</a>
+                        <div class="dropdown-menu">
+                            <a asp-controller="Leave" asp-action="create" class="dropdown-item">Add New Leave</a>
+                            <a asp-controller="Leave" asp-action="Index"class="dropdown-item">List of Leave</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">Salary</a>
+                        <div class="dropdown-menu">
+                            <a asp-controller="Salary" asp-action="create" class="dropdown-item">Add New Salary</a>
+                            <a asp-controller="Salary" asp-action="Index" class="dropdown-item">List of Salary</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">Vacancy</a>
+                        <div class="dropdown-menu">
+                            <a asp-controller="Vacancy" asp-action="create" class="dropdown-item">Add New</a>
+                            <a asp-controller="Vacancy" asp-action="Index" class="dropdown-item">List</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        @RenderBody()
+    </div>
+   
+    <div class="footer">
+        <div class="footer-container">
+            <div class="card-deck">
+                <div class="card downpart">
+                    <div class="card-body text-left">
+                        <h4 class="card-text text-uppercase font-weight-bold text-white">contact us</h4>
+                        <p class="text-white"><img src="~/image/location.png"/>123 main street Ramshah <br />path kalimati Kathmandu, Nepal</p>
+                        <p class="text-white"><img src="~/image/email.png"/>organization@gmail.com</p>
+                        <p class="text-white"><img src="~/image/cell.png" />+977 9820252627, 4310234</p>
+                        <p><img src="~/image/facebook.png" />&nbsp;<img src="~/image/twitter.png" />&nbsp;<img src="~/image/instagram.png" />
+                        &nbsp;<img src="~/image/youtube.png" />&nbsp;<img src="~/image/linkein.png"/></p>
+                    </div>
+                </div>
+                <div class="card downpart">
+                    <div class="card-body text-left">
+                        <h4 class="card-text text-uppercase font-weight-bold text-white">links</h4>
+                        <p class="text-capitalize text-white"><img src="~/image/arrow.png" />About us</p>
+                        <p class="text-capitalize text-white"><img src="~/image/arrow.png" />services</p>
+                        <p class="text-capitalize text-white"><img src="~/image/arrow.png" />privacy policy</p>
+                        <p class="text-capitalize text-white"><img src="~/image/arrow.png" />terms and condition</p>
+                    </div>
+                </div>
+                <div class="card downpart">
+                    <div class="card-body text-left">
+                        <h4 class="card-text text-uppercase font-weight-bold text-white">contact form</h4>
+                        <form>
+                            <input type="text" class="form-control" id="username" placeholder="username"><br />
+                            <input type="text" class="form-control" id="email" placeholder="Email"><br />
+                            <textarea class="col-lg-12" placeholder="message"></textarea><br />
+                            <button class="btn btn-success text-uppercase">submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card downpart">
+                    <div class="card-body text-left">
+                        <h4 class="card-text text-uppercase text-white">stay connected</h4>
+                        <p class="text-white text-capitalize">Thank You for visit our page. We are waiting for your suggestion</p>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

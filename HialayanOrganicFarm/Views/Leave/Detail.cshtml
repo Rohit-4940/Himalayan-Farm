@@ -1,0 +1,48 @@
+﻿@model HimalayanOrganicFarm.Models.Leave;
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <style>
+        .cards {
+            margin-bottom: 20px;
+            border: solid green 1px;
+        }
+
+        .deg {
+            font-family: cursive;
+        }
+
+        .line {
+            border: solid #6cbe03 1px;
+        }
+    </style>
+    <hr class="line" />
+    <h2 class="text-center text-success deg" style="margin-top:20px">Details of Leave</h2>
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+            <div class="card cards">
+                <div class="card-header">
+                    <h1 class="text-info text-capitalize font-weight-bolder text-center">@Model.employee.Name</h1>
+                </div>
+
+                <div class="card-body text-center">
+                    <h4 class="form-control font-weight-bolder text-capitalize"><span class="text-info">Leave ID</span>:&nbsp;@Model.Id</h4>
+                    <h4 class="form-control font-weight-bolder text-capitalize"><span class="text-info">Employee Name</span>:&nbsp;@Model.employee.Name</h4>
+                    <h4 class="form-control font-weight-bolder text-capitalize"><span class="text-info">Type of Leave</span>:&nbsp;@Model.leave_type</h4>
+                    <h4 class="form-control font-weight-bolder text-capitalize"><span class="text-info">From Date</span>:&nbsp;@Model.from_date</h4>
+                    <h4 class="form-control font-weight-bolder text-capitalize"><span class="text-info">To Date</span>:&nbsp;@Model.to_date</h4>
+                    <h4 class="form-control font-weight-bolder text-capitalize"><span class="text-info">No of Days</span>:&nbsp;@Model.no_days</h4>
+                    <h4 class="form-control font-weight-bolder text-capitalize"><span class="text-info">Description</span>:&nbsp;@Model.description</h4>
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-warning" asp-controller="Leave" asp-action="Index">Back</a>
+                    <a class="btn btn-info" asp-controller="Department" asp-action="edit" asp-route-id="@Model.Id">Edit</a>
+                    <a class="btn btn-danger" as-action="delete" asp-route-id="@Model.Id">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
